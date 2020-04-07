@@ -23,4 +23,10 @@ router.post('/article', as(async (req, res) => {
     return res.json(article);
 }));
 
+router.get('/articles', as(async (_, res) => {
+    const articles = await ArticleService.all();
+
+    return res.json(articles);
+}));
+
 module.exports = router;
